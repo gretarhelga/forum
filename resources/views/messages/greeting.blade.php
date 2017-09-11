@@ -1,7 +1,7 @@
 <html>
 <body>
 	<h1>
-		This is a greeting number {{ $id }} with {{ $count }} replies
+		{{ $greeting }} amigo
 	</h1>
 </body>
 </html>
