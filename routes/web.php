@@ -17,7 +17,9 @@ Route::get("/", function() {
 
 
 
-Route::get("/greeting/{id}", function($id){
+/*Route::get("/greeting/{id}", function($id){
 	$greetings = ["hola", "hello", "hallo", "hi", "hey"];
 	return view("messages.greeting", ["greeting" => $greetings[$id]]);
-})->where(["id" => "[0-4]"]);
+})->where(["id" => "[0-4]"]);*/
+
+Route::get("/", "GreetingsController@show");
