@@ -8,7 +8,11 @@ class ThreadsController extends Controller
 {
     public function index()
     {
-    	return view("threads.index");
+    	$threads = [
+    		["title" => "Titill A", "body" => "Lere, oðsim dolor set."],
+    		["title" => "Titill b", "body" => "Þettta er b."]
+    	];
+    	return view("threads.index", compact("threads"));
     }
 
     public function create()
