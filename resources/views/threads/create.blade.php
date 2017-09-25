@@ -7,7 +7,8 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Create a New Thread</div>
                     <div class="panel-body">
-                        <form>
+                        <form method="post" action="/threads">
+                            {{ csrf_field() }}
                             <div class="form-group">
                                 <label>Title:</label>
                                 <input type="text" class="form-control">
