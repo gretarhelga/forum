@@ -6,10 +6,10 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 
-                <div class="panel-heading">{{ $thread[0]->title }}</div>
+                <div class="panel-heading">{{ $thread->title }}</div>
 
                 <div class="panel-body">
-                    {{ $thread[0]->body }}
+                    {{ $thread->body }}
                 </div>
 
             </div>

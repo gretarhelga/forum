@@ -21,13 +21,7 @@
                                 <button type="submit" class="btn btn-primary">Publish</button>
                             </div>
                         </form>
-                        @foreach ($countries as $country)
-                            @if($country === "Ísland")
-                                <h1>{{ $country }}</h1>
-                            @else
-                                <p>{{ $country }}</p>
-                            @endif
-                        @endforeach
+
                     </div>
                 </div>
             </div>
