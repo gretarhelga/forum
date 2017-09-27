@@ -14,6 +14,10 @@ Route::get("/threads/create", "ThreadsController@create")/*->middleware("auth")*
 
 Route::get("/threads/{id}", "ThreadsController@show");
 
+Route::get("/profile/{id}", "ProfileController@show");
+
+Route::get("/profile", "ProfileController@gogn");
+
 
 /*Route::get("/greeting/{id}", function($id){
 	$greetings = ["hola", "hello", "hallo", "hi", "hey"];
