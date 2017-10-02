@@ -16,7 +16,6 @@ Route::get("/threads/{id}", "ThreadsController@show");
 
 Route::get("/profile/{id}", "ProfileController@show");
 
-Route::get("/profile", "ProfileController@gogn");
 
 
 /*Route::get("/greeting/{id}", function($id){
