@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Thread;
+use validator;
 
 class ThreadsController extends Controller
 {
@@ -28,8 +29,25 @@ class ThreadsController extends Controller
         
     	return view("threads.show", compact("thread"));
     }
-    public function store ()
+    public function store(Request $request)
     {
-        dd("store method");
+         $validator = Validator::make($request->all(), [
+            "title" => "required|min:40",
+            "body" => "required|min:20"
+        ]);
+
+         if ($validator>fails()) {
+            return redirect("/create")
+                ->withInput()
+                ->withErrors($validator);
+         }
+
+        $thread = new Thread;
+        $thread->title = $request->title;
+        $thread->body = $request->body;
+        $thread->user_id = 1;
+        $thread->save();
+
+        return redirect("/threads");
     }
 }
