@@ -12,7 +12,7 @@
                     <article>
                         <div>
                             <h4>
-                                {{ $thread->title }}
+                                <a href="/threads/{{ $thread->id }}">{{ $thread->title }}</a>
                             </h4>
                         </div>
                         <div class="body">

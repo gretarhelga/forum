@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Thread;
-use validator;
+use Validator;
+use App\Task;
 
 class ThreadsController extends Controller
 {
     public function index()
     {
-        $threads = Thread::all();
+        $threads = Thread::orderBy("created_at","desc")->get();
 
     	return view("threads.index", compact("threads"));
     }
@@ -36,8 +37,8 @@ class ThreadsController extends Controller
             "body" => "required|min:20"
         ]);
 
-         if ($validator>fails()) {
-            return redirect("/create")
+         if ($validator->fails()) {
+            return redirect("threads/create")
                 ->withInput()
                 ->withErrors($validator);
          }

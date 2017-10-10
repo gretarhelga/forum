@@ -6,8 +6,8 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Create a New Thread</div>
-                @include("errors.errors")
                     <div class="panel-body">
+                    @include("errors.errors")
                         <form method="post" action="/threads">
                             {{ csrf_field() }}
                             <div class="form-group">
