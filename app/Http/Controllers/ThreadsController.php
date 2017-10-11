@@ -33,7 +33,7 @@ class ThreadsController extends Controller
     public function store(Request $request)
     {
          $validator = Validator::make($request->all(), [
-            "title" => "required|min:40",
+            "title" => "required|max:40",
             "body" => "required|min:20"
         ]);
 

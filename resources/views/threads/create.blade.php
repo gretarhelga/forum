@@ -12,11 +12,11 @@
                             {{ csrf_field() }}
                             <div class="form-group">
                                 <label>Title:</label>
-                                <input name="title" type="text" class="form-control">
+                                <input name="title" type="text"  value="{{ old("title") }}" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label>Body:</label>
-                                <textarea name="body" class="form-control" rows="8"></textarea>
+                                <textarea name="body" class="form-control" rows="8">{{ old("body") }}</textarea>
                             </div>
 
                                 <button type="submit" class="btn btn-primary">Publish</button>
