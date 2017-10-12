@@ -6,10 +6,15 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Thread;
 use Validator;
-use App\Task;
+use Auth;
 
 class ThreadsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware("auth")->only("create", "store");
+    }
+
     public function index()
     {
         $threads = Thread::orderBy("created_at","desc")->get();
@@ -19,8 +24,6 @@ class ThreadsController extends Controller
 
     public function create()
     {
-    	$countries =["Ísland", "Ísland", "Írland", "Ísland", "Írland"];
-
     	return view("threads.create");
     }
 
@@ -46,7 +49,7 @@ class ThreadsController extends Controller
         $thread = new Thread;
         $thread->title = $request->title;
         $thread->body = $request->body;
-        $thread->user_id = 1;
+        $thread->user_id = Auth::id();
         $thread->save();
 
         return redirect("/threads");
