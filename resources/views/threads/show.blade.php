@@ -11,8 +11,31 @@
                 <div class="panel-body">
                     {{ $thread->body }}
                 </div>
-
             </div>
+
+            <form method="POST" action="/threads/{{ $thread->id }}/comment">
+                {{ csrf_field() }}
+                <div class="form-group">
+                    <label>Comment</label>
+                    <textarea name="efni" class="form-control" rows="8"></textarea>
+                </div>
+                    <button type="submit" class="btn btn-primary">Reply</button>
+            </form>
+
+
+            @foreach($comments as $comment)
+                <article>
+                    </div>
+                    <div class="body">
+                    {{ $thread->body }}
+
+                    </div>
+                </article>
+                <hr>
+            @endforeach
+
+
+
         </div>
     </div>
 </div>

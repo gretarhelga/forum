@@ -30,8 +30,10 @@ class ThreadsController extends Controller
     public function show($id)
     {
         $thread = Thread::find($id);
+
+        $comment = Comment::all();
         
-    	return view("threads.show", compact("thread"));
+    	return view("threads.show", compact("thread", "comment"));
     }
     public function store(Request $request)
     {

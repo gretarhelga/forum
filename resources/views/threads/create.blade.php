@@ -18,9 +18,7 @@
                                 <label>Body:</label>
                                 <textarea name="body" class="form-control" rows="8">{{ old("body") }}</textarea>
                             </div>
-
                                 <button type="submit" class="btn btn-primary">Publish</button>
-                            </div>
                         </form>
 
                     </div>
