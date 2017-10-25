@@ -10,8 +10,4 @@ class Thread extends Model
     {
     	return $this->hasMany("App\Comment");
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 3ef4de193ac90cca66d937714e463720c25124dd
