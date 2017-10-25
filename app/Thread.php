@@ -11,4 +11,3 @@ class Thread extends Model
     	return $this->hasMany("App\Comment");
     }
 }
-S
