@@ -18,5 +18,5 @@ class CommentController extends Controller
         $comment->save();
 
         return back();
-    }
+    }$
 }

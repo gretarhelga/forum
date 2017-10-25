@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Thread;
+use App\Comment;
+use App\User;
 use Validator;
 use Auth;
 
@@ -31,9 +33,14 @@ class ThreadsController extends Controller
     {
         $thread = Thread::find($id);
 
-        $comment = Comment::all();
+        /*$comments = Comment::where("thread_id", "=", $id)->orderBy("created_at","desc")->get();*/
+
+        $eigandi = User::find("id");
+
+
+
         
-    	return view("threads.show", compact("thread", "comment"));
+    	return view("threads.show", compact("thread", "eigandi"));
     }
     public function store(Request $request)
     {
